@@ -37,6 +37,7 @@ API
 - *token*: received in response body after successful login request
 - *decline_reason*: the **name** of an entry of the decline reasons list
 
+----------
 
 - login - request
 	 - endpoint: {baseURL}/api/employee/v1/auth
