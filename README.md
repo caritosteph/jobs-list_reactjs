@@ -31,11 +31,11 @@ Important: We are securing the API calls with a JWT. No call except the login is
 API
 -------------
 
-*baseUrl* (included in the mail): proceeding to all API calls
-*user* (included in the mail): only valid user for login
-*password* (included in the mail): password of the user
-*token*: received in response body after successful login request
-*decline_reason*: the **name** of an entry of the decline reasons list
+- *baseUrl* (included in the mail): proceeding to all API calls
+- *user* (included in the mail): only valid user for login
+- *password* (included in the mail): password of the user
+- *token*: received in response body after successful login request
+- *decline_reason*: the **name** of an entry of the decline reasons list
 
  - login - request
 	 - endpoint: {baseURL}/api/employee/v1/auth
