@@ -37,7 +37,8 @@ API
 - *token*: received in response body after successful login request
 - *decline_reason*: the **name** of an entry of the decline reasons list
 
- - login - request
+
+- login - request
 	 - endpoint: {baseURL}/api/employee/v1/auth
 	 - HTTP-method: POST
 	 - HTTP-header: 
@@ -46,7 +47,7 @@ API
 		 - username: "{user}" 
 		 - password: "{password}"
 
- - login - response - success
+- login - response - success
 	 - status: 200 OK
 	 - body (json): (login-200-response.json)
 
