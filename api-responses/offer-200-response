@@ -1,0 +1,49 @@
+{
+  "id": "lh1BTg70ptsQ",
+  "jobCategoryKey": "SANDBOX",
+  "title": "Sandbox Job",
+  "description": "Please accept this sandbox job in a sandbox location as a sandbox helper",
+  "instructions": "Please come dressed",
+  "companyName": "Sandbox Dummy",
+  "companyLogoUrl": "",
+  "minutesSum": "240",
+  "hourSum": null,
+  "breakTypes": [
+    {
+      "minutes": 0,
+      "description": "Pause bei < 6 Stunden Arbeitszeit"
+    }
+  ],
+  "shifts": [
+    {
+      "beginDate": "2017-04-20T20:00:00+02:00",
+      "endDate": "2017-04-21T00:00:00+02:00",
+      "breakTypes": 0
+    }
+  ],
+  "earningTotal": "40.00 EUR",
+  "earningHourly": "10.00 EUR",
+  "pricingTables": [
+    {
+      "isSummary": true,
+      "times": null,
+      "minutes": 240,
+      "name": "Basislohn",
+      "unpaid": false,
+      "earningHourly": "10.00 EUR",
+      "earningTotal": "40.00 EUR"
+    }
+  ],
+  "location": {
+    "locationName": "Sandbox Store",
+    "street": "Rosenthaler Straße",
+    "streetNumber": "13",
+    "supplementary": null,
+    "postalCode": "10119",
+    "city": "Berlin",
+    "district": "Mitte",
+    "locationSearchString": "Rosenthaler Straße 13, 10119 Berlin",
+    "locationLongitude": 13.402839,
+    "locationLatitude": 52.527457
+  }
+}
