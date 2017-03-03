@@ -122,18 +122,19 @@ notes:
  - The entrypoint of the application is the login view.
  - Use the designs as guidelines - no pixel perfect views are needed
 
- - login (see screens/login)
+
+- login (see screens/login)
 	 - create a login view with a form for login with username and password
 		 - on successful login redirect to the list offers view 
- - list offers (see screens/offers)
+- list offers (see screens/offers)
 	 - get offers list from api
 	 - render each offer as a card with details you can find in the designs
 	 - on click 'ZEIG MIR DETAILS': go to offer details view
 	 - on click 'NICHT INTERESSIERT': decline offer with reason
- - show offer (see screens/offer)
+- show offer (see screens/offer)
 	 - get offer details from api
 	 - render a detailed offer view with details you can find in the designs
- - decline offer with reason (see screens/decline)
+- decline offer with reason (see screens/decline)
 	 - get decline reasons from api
 	 - render decline reason wizard 
 		 - render step 1: decline/decline_wizard_step-1.png
