@@ -119,8 +119,8 @@ General:
 Coding:
 
 notes: 
- - The entrypoint of the application is the login view.
- - Use the designs as guidelines - no pixel perfect views are needed
+ + The entrypoint of the application is the login view.
+ + Use the designs as guidelines - no pixel perfect views are needed
 
 
 - login (see screens/login)
