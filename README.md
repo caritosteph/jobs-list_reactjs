@@ -106,6 +106,20 @@ API
 	- status: 200 OK
 	- body (json): (decline-offer-200-response.json)
 
+----------	
+
+ - SANDBOX create new offer - request
+	 - endpoint: /api/employee/v1/sandbox/offer
+	 - HTTP-method: POST
+	 - HTTP-header
+		 - Authorization: "Bearer {token}"
+		 - Content-Type: "application/json"
+	 - body (json):
+		 - shifts: number
+		 - instructions: boolean
+		 
+	 - example: {shifts: '1', instructions: 'true'}
+
 
 Tasks
 -------------
