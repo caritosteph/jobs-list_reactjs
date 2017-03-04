@@ -137,7 +137,7 @@ notes:
  + The entrypoint of the application is the login view.
  + Use the designs as guidelines - no pixel perfect views are needed
 
-
+tasks:
 - login (see screens/login)
 	 - create a login view with a form for login with username and password
 		 - on successful login redirect to the list offers view 
