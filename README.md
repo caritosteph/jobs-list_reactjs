@@ -118,7 +118,8 @@ API
 		 - shifts: number
 		 - instructions: boolean
 		 
-	 - example: {shifts: '1', instructions: 'true'}
+example: {shifts: '1', instructions: 'true'
+effect: creates a new job offer for the current logged in user (listable in offers request)
 
 
 Tasks
