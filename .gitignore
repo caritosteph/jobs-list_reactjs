@@ -1,0 +1,12 @@
+# Dependency directory
+node_modules
+
+#dist folder
+dist
+
+# Mac files
+.DS_Store
+
+# Logs
+logs
+*.log*
