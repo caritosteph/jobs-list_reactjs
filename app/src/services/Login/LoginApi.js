@@ -13,9 +13,6 @@ class LoginApi {
     })
     .then(response => {
       return response.json();
-    })
-    .then(json => {
-      return json;
     });
   }
 }

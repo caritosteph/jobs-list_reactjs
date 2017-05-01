@@ -2,10 +2,17 @@ import React, { Component } from "react";
 // import { PropTypes } from "prop-types";
 import Login from "../../components/Login/Login";
 import LoginApi from "../../services/Login/LoginApi";
+import { Redirect } from "react-router-dom";
 
 class LoginContainer extends Component {
   constructor(props){
     super(props);
+    this.state = {
+      loginuser: false,
+      loginresponse: {},
+      errormessage: ""
+    };
+
     this._handleSubmit = this._handleSubmit.bind(this);
   }
 
@@ -15,10 +22,33 @@ class LoginContainer extends Component {
     let password = e.target.password.value;
 
     let loginUser = {username, password};
-    LoginApi.loginUser(loginUser);
+    LoginApi.loginUser(loginUser)
+    .then(response => {
+      this.setState({
+        loginuser: true,
+        loginresponse: response
+      });
+    })
+    .catch(error => {
+      this.setState({
+        loginuser: false,
+        errormessage: error
+      });
+    });
   }
 
   render() {
+    const { loginuser, loginresponse } = this.state;
+
+    if (loginuser) {
+      return (
+        <Redirect to={{
+            pathname: '/offers',
+            state: { loginresponse }
+          }} />
+      );
+    }
+
     return <Login handleSubmit = {this._handleSubmit}/>;
   }
 }

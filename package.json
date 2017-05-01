@@ -16,7 +16,6 @@
   "author": "Carolyn Ulfe",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.17.4",
     "material-ui": "^0.17.4",
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
