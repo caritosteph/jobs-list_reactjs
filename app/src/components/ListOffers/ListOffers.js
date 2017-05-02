@@ -2,11 +2,14 @@ import React from "react";
 import { PropTypes } from "prop-types";
 import Offer from "./Offer";
 
-const ListOffers = ({offers}) => {
+const ListOffers = ({offers, handleOpenDecline}) => {
   return (
     <div>
       { offers.map((offer, key) => (
-          <Offer key = {key} offer = {offer} />
+          <Offer
+            key = {key}
+            offer = {offer}
+            handleOpenDecline = {handleOpenDecline}/>
         ))
       }
     </div>
@@ -15,6 +18,6 @@ const ListOffers = ({offers}) => {
 //
 ListOffers.propTypes = {
   offers: PropTypes.array.isRequired
-  // handleDecline: PropTypes.function.isRequired
+  // handleOpenDecline: PropTypes.function.isRequired
 };
 export default ListOffers;

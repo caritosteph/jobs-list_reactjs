@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-// import DeclineReasons from "../../components/DeclineOffer/DeclineReasons";
 import FlatButton from 'material-ui/RaisedButton';
 import DeclineReasonsContainer from "./DeclineReasonsContainer";
-import ReasonContainer from "./ReasonContainer";
+import ReasonComentContainer from "./ReasonComentContainer";
 import DeclineApi from "../../services/DeclineApi";
 
 let declineValues = {
@@ -38,31 +37,39 @@ class WizardContainer extends Component {
 
   _handleDecline(e) {
     e.preventDefault();
-    let {id} = this.props.query.id;
-    console.log(declineValues);
+    let {id} = this.props;
+    console.log(id);
     this.setState({ step: 1 });
     DeclineApi.declineOffer(id,reasons);
   }
 
   render() {
     let {step} = this.state;
-    let fns = {
-        nextStep: this._handleNextStep,
-        saveDeclineValues: this._saveDeclineValues
-    };
+    let view = "";
+    // let { openDecline } = this.props;
+
+    switch (step) {
+      case 1:
+        return <DeclineReasonsContainer
+                  nextStep = {this._handleNextStep}
+                  saveDeclineValues = {this._saveDeclineValues} />
+        // break;
+      case 2:
+        return  <ReasonComentContainer
+                  saveDeclineValues = {this._saveDeclineValues}
+                  handleDecline = {this._handleDecline} />
+        // break;
+    }
 
     // return (
-      switch (step) {
-        case 1:
-          return <DeclineReasonsContainer
-                    nextStep = {this._handleNextStep}
-                    saveDeclineValues = {this._saveDeclineValues} />
-        case 2:
-          return  <ReasonContainer
-                    saveDeclineValues = {this._saveDeclineValues}
-                    handleDecline = {this._handleDecline} />
-
-      }
+    //
+    //   <Dialog
+    //       title = "Decline Offer"
+    //       modal = {true}
+    //       open = {openDecline} >
+    //       {view}
+    //   </Dialog>
+    // )
   }
 }
 

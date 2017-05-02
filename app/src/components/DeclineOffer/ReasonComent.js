@@ -2,7 +2,7 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/RaisedButton';
 
-const Reason = ({saveReasonComent}) => {
+const ReasonComent = ({saveReasonComent}) => {
   return (
     <form onSubmit = {saveReasonComent}>
       <h3>Please enter your reason</h3>
@@ -15,4 +15,4 @@ const Reason = ({saveReasonComent}) => {
   );
 };
 
-export default Reason;
+export default ReasonComent;

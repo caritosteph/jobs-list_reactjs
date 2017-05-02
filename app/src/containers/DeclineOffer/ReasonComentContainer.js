@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import Reason from "../../components/DeclineOffer/Reason";
+import ReasonComent from "../../components/DeclineOffer/ReasonComent";
 
-class ReasonContainer extends Component {
+class ReasonComentContainer extends Component {
 
   constructor(props) {
     super(props);
@@ -19,8 +19,8 @@ class ReasonContainer extends Component {
   }
 
   render() {
-    return <Reason saveReasonComent = {this._saveReasonComent}/>;
+    return <ReasonComentContainer saveReasonComent = {this._saveReasonComent}/>;
   }
 }
 
-export default ReasonContainer;
+export default ReasonComentContainer;

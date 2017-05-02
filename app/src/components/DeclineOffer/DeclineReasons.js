@@ -20,8 +20,6 @@ const DeclineReasons = ({reasons, saveReason}) => {
       </RadioButtonGroup>
       <FlatButton type="submit" label="Send" primary={true} backgroundColor="#93e7cf" />
     </form>
-
-
   );
 };
 

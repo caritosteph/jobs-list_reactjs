@@ -40,7 +40,7 @@ class DeclineReasonsContainer extends Component {
 
   render() {
     let {reasons} = this.state;
-
+    
     return <DeclineReasons reasons = {reasons} saveReason = {this._saveReason}/>;
   }
 }
