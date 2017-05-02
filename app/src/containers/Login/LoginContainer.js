@@ -26,7 +26,6 @@ class LoginContainer extends Component {
     let loginUser = {username, password};
     LoginApi.loginUser(loginUser)
     .then(response => {
-      console.log(response);
       this.setState({
         loginuser: true,
         loginresponse: response
@@ -43,7 +42,7 @@ class LoginContainer extends Component {
   }
 
   render() {
-    const { loginuser, loginresponse } = this.state;
+    let { loginuser, loginresponse } = this.state;
 
     if (loginuser) {
       return (

@@ -16,7 +16,6 @@ class ListOffersContainer extends Component {
 
     OffersApi.getOffers()
     .then(response => {
-      console.log(response);
       this.setState({
         offers: response.offers
       });

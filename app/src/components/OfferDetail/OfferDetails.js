@@ -1,17 +1,19 @@
 import React from "react";
 import { PropTypes } from "prop-types";
+import FlatButton from 'material-ui/RaisedButton';
 
-const OfferDetail = ({offer}) => {
+const OfferDetail = ({offerDetail}) => {
   return (
     <div>
-      <p>Title: {offer.title}</p>
-      <p>description: {offer.description}</p>
-      <p>companyName: {offer.companyName}</p>
+      <p>Title: {offerDetail.title}</p>
+      <p>description: {offerDetail.description}</p>
+      <p>companyName: {offerDetail.companyName}</p>
+      <FlatButton label="More Detail" primary={true} backgroundColor="#93e7cf" />
     </div>
   );
 };
 
 OfferDetail.propTypes = {
-  offer: PropTypes.object.isRequired
+  offerDetail: PropTypes.object.isRequired
 };
 export default OfferDetail;

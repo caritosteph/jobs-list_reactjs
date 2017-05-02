@@ -1,25 +1,25 @@
 import React, { Component } from "react";
 // import PropTypes from "prop-types";
 import OffersApi from "../../services/Offers/OffersApi";
+import OfferDetail from "../../components/OfferDetail/OfferDetails";
 
 class OfferDetailContainer extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      offerdetail: {}
+      offerDetail: {}
     };
   }
 
   componentWillMount() {
     let props = this.props;
-    console.log(props);
     let id = props.location.query.id;
 
     OffersApi.getOfferDetail(id)
     .then(response => {
       this.setState({
-        offers: response.offers
+        offerDetail: response
       });
     })
     .catch(error => {
@@ -29,9 +29,9 @@ class OfferDetailContainer extends Component {
   }
 
   render() {
-    return (
-      <div>offerdetailcontainer</div>
-    );
+    let {offerDetail} = this.state;
+
+    return <OfferDetail offerDetail = {offerDetail} />;
   }
 }
 
