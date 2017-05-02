@@ -11,7 +11,7 @@ class DeclineReasonsContainer extends Component {
       reasons: []
     };
 
-    this._handleDecline =  this._handleDecline.bind(this);
+    this._saveReason =  this._saveReason.bind(this);
   }
 
   componentWillMount() {
@@ -28,14 +28,20 @@ class DeclineReasonsContainer extends Component {
 
   }
 
-  _handleDecline() {
-
+  _saveReason(e) {
+    e.preventDefault();
+    let {saveDeclineValues, nextStep} = this.props;
+    let reason = {
+      reason: e.target.reasons.value
+    }
+    saveDeclineValues(reason);
+    nextStep();
   }
 
   render() {
     let {reasons} = this.state;
 
-    return <DeclineReasons reasons = {reasons} handleDecline = {this._handleDecline}/>;
+    return <DeclineReasons reasons = {reasons} saveReason = {this._saveReason}/>;
   }
 }
 

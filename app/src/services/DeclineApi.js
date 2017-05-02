@@ -19,7 +19,7 @@ class DeclineApi {
 
   }
 
-  static declineOffer(id, reason) {
+  static declineOffer(id, reasons) {
 
     return fetch(DECLINE_OFFER_REQUEST + id, {
       method: "DELETE",

@@ -1,15 +1,17 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
+import FlatButton from 'material-ui/RaisedButton';
 
-const Reason = () => {
+const Reason = ({saveReasonComent}) => {
   return (
-    <div>
+    <form onSubmit = {saveReasonComent}>
       <h3>Please enter your reason</h3>
       <TextField
         hintText = "Reason"
-        name = "reason"
+        name = "reasonComment"
       />
-    </div>
+      <FlatButton type="submit" label="Submit" primary={true} backgroundColor="#93e7cf" />
+    </form>
   );
 };
 

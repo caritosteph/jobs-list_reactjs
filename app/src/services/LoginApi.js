@@ -1,6 +1,6 @@
 
 import "whatwg-fetch";
-import { LOGIN_REQUEST } from "../constants/Urls";
+import { LOGIN_REQUEST } from "../config/Urls";
 
 class LoginApi {
 

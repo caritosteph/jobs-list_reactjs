@@ -4,8 +4,7 @@ import FlatButton from 'material-ui/RaisedButton';
 
 const WizardDecline = ({handleDecline}) => {
   return (
-    <form>
-      
+    <form onSubmit = {handleDecline}>
       <FlatButton label="Not now" primary={true} backgroundColor="#93e7cf" />
       <FlatButton label="Send" primary={true} backgroundColor="#93e7cf" handleDecline = {handleDecline}/>
     </form>
