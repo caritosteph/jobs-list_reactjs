@@ -6,9 +6,20 @@ import FlatButton from 'material-ui/RaisedButton';
 const Login = ({handleSubmit}) => {
   return (
     <form onSubmit={handleSubmit}>
-      <TextField hintText="Hint Text" fullWidth={true} name = "username" />
-      <TextField hintText="Hint Text" fullWidth={true} name = "password" />
-      <FlatButton type= "submit" label="Primary" primary={true} backgroundColor="#93e7cf" />
+      <TextField
+        hintText = "Username"
+        name = "username"
+        floatingLabelText = "username"/>
+      <TextField
+        type = "password"
+        hintText = "Password"
+        name = "password"
+        floatingLabelText="Password"/>
+      <FlatButton
+        type= "submit"
+        label="Primary"
+        primary={true}
+        backgroundColor="#93e7cf" />
     </form>
   );
 };

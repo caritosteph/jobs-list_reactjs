@@ -10,6 +10,8 @@ class DeclineReasonsContainer extends Component {
     this.state = {
       reasons: []
     };
+
+    this._handleDecline =  this._handleDecline.bind(this);
   }
 
   componentWillMount() {
@@ -26,10 +28,14 @@ class DeclineReasonsContainer extends Component {
 
   }
 
+  _handleDecline() {
+
+  }
+
   render() {
     let {reasons} = this.state;
 
-    return <DeclineReasons reasons = {reasons} />;
+    return <DeclineReasons reasons = {reasons} handleDecline = {this._handleDecline}/>;
   }
 }
 

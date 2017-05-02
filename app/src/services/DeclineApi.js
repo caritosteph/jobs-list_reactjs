@@ -19,13 +19,14 @@ class DeclineApi {
 
   }
 
-  static declineOffer(id) {
+  static declineOffer(id, reason) {
 
     return fetch(DECLINE_OFFER_REQUEST + id, {
       method: "DELETE",
       headers: {
         "Authorization": `Bearer ${getAccessToken()}`
-      }
+      },
+      body: JSON.stringify(reasons)
     })
     .then(response => {
       return response.json();
