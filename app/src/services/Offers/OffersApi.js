@@ -1,13 +1,14 @@
 
 import "whatwg-fetch";
-import { offersRequest } from "../../configs/Urls";
+import { OFFERS_REQUEST, OFFER_REQUEST } from "../../configs/Urls";
+import { getAccessToken } from "../../config/AuthConfig";
 
 class OffersApi {
-  static getOffers (token) {
-    return fetch(offersRequest, {
+  static getOffers() {
+    return fetch(OFFERS_REQUEST, {
       method: "GET",
       headers: {
-        "Authorization": "Bearer "+ token,
+        "Authorization": `Bearer ${getAccessToken()}`,
         "Content-Type": "application/json"
       }
     })
@@ -15,6 +16,20 @@ class OffersApi {
       return response.json();
     });
   }
+
+  static getOfferDetail(id) {
+    return fetch(OFFER_REQUEST + id, {
+      method: "GET",
+      headers: {
+        "Authorization": `Bearer ${getAccessToken()}`,
+        "Content-Type": "application/json"
+      }
+    })
+    .then(response => {
+      return response.json();
+    });
+  }
+
 }
 
 export default OffersApi;

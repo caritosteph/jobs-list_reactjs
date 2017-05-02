@@ -13,11 +13,10 @@ class ListOffersContainer extends Component {
   }
 
   componentWillMount() {
-    let props = this.props;
-    let token = props.location.state.loginresponse.access_token;
 
-    OffersApi.getOffers(token)
+    OffersApi.getOffers()
     .then(response => {
+      console.log(response);
       this.setState({
         offers: response.offers
       });
@@ -25,6 +24,7 @@ class ListOffersContainer extends Component {
     .catch(error => {
       return error;
     });
+
   }
 
   render() {

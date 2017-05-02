@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Login from "../../components/Login/Login";
 import LoginApi from "../../services/Login/LoginApi";
 import { Redirect } from "react-router-dom";
+import { setAccessToken } from "../../config/AuthConfig";
 
 class LoginContainer extends Component {
   constructor(props){
@@ -18,22 +19,26 @@ class LoginContainer extends Component {
 
   _handleSubmit(e){
     e.preventDefault();
+
     let username = e.target.username.value;
     let password = e.target.password.value;
 
     let loginUser = {username, password};
     LoginApi.loginUser(loginUser)
     .then(response => {
+      console.log(response);
       this.setState({
         loginuser: true,
         loginresponse: response
       });
+      setAccessToken(response.access_token);
     })
     .catch(error => {
       this.setState({
         loginuser: false,
         errormessage: error
       });
+
     });
   }
 
@@ -44,7 +49,7 @@ class LoginContainer extends Component {
       return (
         <Redirect to={{
             pathname: '/offers',
-            state: { loginresponse }
+            query: { loginresponse }
           }} />
       );
     }
