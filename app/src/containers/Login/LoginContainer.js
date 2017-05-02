@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import { PropTypes } from "prop-types";
 import Login from "../../components/Login/Login";
-import LoginApi from "../../services/Login/LoginApi";
+import LoginApi from "../../services/LoginApi";
 import { Redirect } from "react-router-dom";
 import { setAccessToken } from "../../config/AuthConfig";
 

@@ -15,5 +15,6 @@ const ListOffers = ({offers}) => {
 //
 ListOffers.propTypes = {
   offers: PropTypes.array.isRequired
+  // handleDecline: PropTypes.function.isRequired
 };
 export default ListOffers;

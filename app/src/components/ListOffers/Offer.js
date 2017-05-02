@@ -16,11 +16,15 @@ const Offer = ({offer}) => {
         }} >
         <FlatButton label="More Detail" primary={true} backgroundColor="#93e7cf" />
       </Link>
+      <Link to="/reasons" >
+        <FlatButton label="Decline" primary={true} backgroundColor="#93e7cf" />
+      </Link>
     </div>
   );
 };
 
 Offer.propTypes = {
   offer: PropTypes.object.isRequired
+  // handleDecline: PropTypes.function.isRequired
 };
 export default Offer;

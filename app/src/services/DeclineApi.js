@@ -1,12 +1,13 @@
 
 import "whatwg-fetch";
-import { OFFERS_REQUEST, OFFER_REQUEST } from "../../config/Urls";
-import { getAccessToken } from "../../config/AuthConfig";
+import { DECLINE_REASON_REQUEST, DECLINE_OFFER_REQUEST } from "../config/Urls";
+import { getAccessToken } from "../config/AuthConfig";
 
-class OffersApi {
-  static getOffers() {
+class DeclineApi {
 
-    return fetch(OFFERS_REQUEST, {
+  static getDeclineReasons() {
+
+    return fetch(DECLINE_REASON_REQUEST, {
       method: "GET",
       headers: {
         "Authorization": `Bearer ${getAccessToken()}`
@@ -18,10 +19,10 @@ class OffersApi {
 
   }
 
-  static getOfferDetail(id) {
+  static declineOffer(id) {
 
-    return fetch(OFFER_REQUEST + id, {
-      method: "GET",
+    return fetch(DECLINE_OFFER_REQUEST + id, {
+      method: "DELETE",
       headers: {
         "Authorization": `Bearer ${getAccessToken()}`
       }
@@ -34,4 +35,4 @@ class OffersApi {
 
 }
 
-export default OffersApi;
+export default DeclineApi;

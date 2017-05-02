@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import PropTypes from "prop-types";
-import OffersApi from "../../services/Offers/OffersApi";
+import OffersApi from "../../services/OffersApi";
 import OfferDetail from "../../components/OfferDetail/OfferDetails";
 
 class OfferDetailContainer extends Component {

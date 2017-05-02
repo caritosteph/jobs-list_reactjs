@@ -1,10 +1,11 @@
 
 import "whatwg-fetch";
-import { LOGIN_REQUEST } from "../../constants/Urls";
+import { LOGIN_REQUEST } from "../constants/Urls";
 
 class LoginApi {
 
   static loginUser(user) {
+
     return fetch(LOGIN_REQUEST, {
       method: "POST",
       headers: {

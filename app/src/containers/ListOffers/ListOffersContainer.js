@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 // import { PropTypes } from "prop-types";
 import ListOffers from "../../components/ListOffers/ListOffers";
-import OffersApi from "../../services/Offers/OffersApi";
+import OffersApi from "../../services/OffersApi";
+import DeclineReasonsContainer from "../../containers/DeclineOffer/DeclineReasonsContainer";
 
 class ListOffersContainer extends Component {
 
@@ -26,11 +27,15 @@ class ListOffersContainer extends Component {
 
   }
 
+  _handleDecline() {
+    return <DeclineReasonsContainer />;
+  }
+
   render() {
     let { offers } = this.state;
 
     return (
-      <ListOffers offers = {offers} />
+      <ListOffers offers = {offers} handleDecline = {this._handleDecline}/>
     );
   }
 }

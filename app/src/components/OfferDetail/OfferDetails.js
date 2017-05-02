@@ -8,7 +8,7 @@ const OfferDetail = ({offerDetail}) => {
       <p>Title: {offerDetail.title}</p>
       <p>description: {offerDetail.description}</p>
       <p>companyName: {offerDetail.companyName}</p>
-      <FlatButton label="More Detail" primary={true} backgroundColor="#93e7cf" />
+      <FlatButton label="Action button" primary={true} backgroundColor="#93e7cf" />
     </div>
   );
 };

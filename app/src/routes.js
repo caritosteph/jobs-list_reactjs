@@ -8,6 +8,7 @@ import {
 import LoginContainer from "./containers/Login/LoginContainer";
 import ListOffersContainer from "./containers/ListOffers/ListOffersContainer";
 import OfferDetailContainer from "./containers/OfferDetail/OfferDetailContainer";
+import DeclineReasonsContainer from "./containers/DeclineOffer/DeclineReasonsContainer";
 
 export default (
   <Router history = {browserHistory}>
@@ -16,6 +17,7 @@ export default (
       <Route exact path="/" component={LoginContainer} />
       <Route path="/offers" component={ListOffersContainer} />
       <Route path="/offerDetail/:id" component={OfferDetailContainer} />
+      <Route path="/reasons" component={DeclineReasonsContainer} />
     </div>
   </Router>
 );
