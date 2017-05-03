@@ -1,16 +1,17 @@
 import React, { Component } from "react";
 import Login from "../../components/Login/Login";
+import LoginError from "../../components/Login/LoginError";
 import LoginApi from "../../services/LoginApi";
 import { Redirect } from "react-router-dom";
 import { setAccessToken } from "../../config/AuthConfig";
 
 class LoginContainer extends Component {
+
   constructor(props){
     super(props);
     this.state = {
-      loginuser: false,
-      loginresponse: {},
-      errormessage: ""
+      loginUser: false,
+      loginResponse: {}
     };
 
     this._handleSubmit = this._handleSubmit.bind(this);
@@ -26,34 +27,36 @@ class LoginContainer extends Component {
     LoginApi.loginUser(loginUser)
     .then(response => {
       this.setState({
-        loginuser: true,
-        loginresponse: response
+        loginUser: true,
+        loginResponse: response
       });
       setAccessToken(response.access_token);
     })
-    .catch(error => {
+    .catch(() => {
       this.setState({
-        loginuser: false,
-        errormessage: error
+        loginuser: false
       });
-
     });
   }
 
   render() {
-    let { loginuser, loginresponse } = this.state;
+    let { loginUser, loginResponse } = this.state;
 
-    if (loginuser) {
+    if (loginUser) {
       return (
         <Redirect to={{
             pathname: '/offers',
-            query: { loginresponse }
+            query: { loginResponse }
           }} />
       );
     }
 
     return (
+      <div>
         <Login handleSubmit = {this._handleSubmit}/>
+        {!loginUser ? <LoginError /> : ""}
+      </div>
+
     );
   }
 }

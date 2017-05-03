@@ -1,6 +1,5 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-// import { Button, Input } from "react-materialize";
 import logo from "../../assets/images/login.png";
 
 const Login = ({handleSubmit}) => {
@@ -12,9 +11,6 @@ const Login = ({handleSubmit}) => {
         </div>
       </div>
       <form className = "col" onSubmit={handleSubmit}>
-        {/* <Input type="email" label="Email" s={6} />
-        <Input type="password" label="password" s={6} />
-        <Button type= "submit" waves="light">button</Button> */}
         <div className="row">
           <div className="input-field col s6 offset-s3">
             <input name="email" id="email" type="email" className="validate"/>
@@ -29,7 +25,7 @@ const Login = ({handleSubmit}) => {
         </div>
         <div className="row">
           <div className="col s6 offset-s3 button-login">
-            <button type = "submit" className="waves-effect waves-light btn">EINLOGGEN</button>
+            <button type="submit" className="waves-effect waves-light btn">EINLOGGEN</button>
           </div>
         </div>
         <div className="row">
@@ -43,9 +39,7 @@ const Login = ({handleSubmit}) => {
           </div>
         </div>
       </form>
-
     </div>
-
   );
 };
 

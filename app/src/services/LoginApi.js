@@ -8,6 +8,7 @@ class LoginApi {
 
     return fetch(LOGIN_REQUEST, {
       method: "POST",
+      mode: "no-cors",
       headers: {
         'Content-Type': 'application/json'
       },
