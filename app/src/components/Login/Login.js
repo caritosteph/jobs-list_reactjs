@@ -13,7 +13,7 @@ const Login = ({handleSubmit}) => {
       <form className = "col" onSubmit={handleSubmit}>
         <div className="row">
           <div className="input-field col s6 offset-s3">
-            <input name="email" id="email" type="email" className="validate"/>
+            <input name="username" id="username" type="email" className="validate"/>
             <label htmlFor="email">Email</label>
           </div>
         </div>

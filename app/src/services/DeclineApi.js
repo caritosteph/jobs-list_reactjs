@@ -1,5 +1,4 @@
-
-import "whatwg-fetch";
+import axios from "axios";
 import { DECLINE_REASON_REQUEST, DECLINE_OFFER_REQUEST } from "../config/Urls";
 import { getAccessToken } from "../config/AuthConfig";
 
@@ -7,29 +6,31 @@ class DeclineApi {
 
   static getDeclineReasons() {
 
-    return fetch(DECLINE_REASON_REQUEST, {
-      method: "GET",
+    return axios({
+      method: "get",
+      url: DECLINE_REASON_REQUEST
       headers: {
         "Authorization": `Bearer ${getAccessToken()}`
       }
     })
     .then(response => {
-      return response.json();
+      return response;
     });
 
   }
 
   static declineOffer(id, reasons) {
 
-    return fetch(DECLINE_OFFER_REQUEST + id, {
-      method: "DELETE",
+    return axios({
+      method: "delete",
+      url: DECLINE_OFFER_REQUEST + id,
       headers: {
         "Authorization": `Bearer ${getAccessToken()}`
       },
-      body: JSON.stringify(reasons)
+      data: reasons
     })
     .then(response => {
-      return response.json();
+      return response;
     });
 
   }

@@ -20,17 +20,24 @@ class LoginContainer extends Component {
   _handleSubmit(e){
     e.preventDefault();
 
-    let email = e.target.email.value;
+    let username = e.target.username.value;
     let password = e.target.password.value;
 
-    let loginUser = {email, password};
+    let loginUser = {username, password};
     LoginApi.loginUser(loginUser)
     .then(response => {
-      this.setState({
-        loginUser: true,
-        loginResponse: response
-      });
-      setAccessToken(response.access_token);
+      console.log(response);
+      if(response.status === 200 ) {
+        this.setState({
+          loginUser: true,
+          loginResponse: response.data
+        });
+        setAccessToken(response.data.access_token);
+      }else {
+        this.setState({
+          loginUser: false
+        });
+      }
     })
     .catch(() => {
       this.setState({

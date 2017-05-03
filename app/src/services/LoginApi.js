@@ -1,21 +1,20 @@
-
-import "whatwg-fetch";
+import axios from "axios";
 import { LOGIN_REQUEST } from "../config/Urls";
 
 class LoginApi {
 
   static loginUser(user) {
 
-    return fetch(LOGIN_REQUEST, {
-      method: "POST",
-      mode: "no-cors",
+    return axios({
+      method: "post",
+      url: LOGIN_REQUEST,
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(user)
+      data: user
     })
     .then(response => {
-      return response.json();
+      return response;
     });
   }
 
