@@ -1,24 +1,24 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-import { RadioButton, RadioButtonGroup } from "material-ui/RadioButton";
-import FlatButton from 'material-ui/RaisedButton';
+// import { RadioButton, RadioButtonGroup } from "material-ui/RadioButton";
+// import FlatButton from 'material-ui/RaisedButton';
 
 const DeclineReasons = ({reasons, saveReason}) => {
   return (
 
     <form onSubmit = {saveReason} >
-      <RadioButtonGroup name="reasons" defaultSelected="not_light">
+      <div name="reasons" defaultSelected="not_light">
         {
           reasons.map((reason, key) => (
-            <RadioButton
+            <div
               value = {reason.name}
               label = {reason.label}
               key = {key}
             />
           ))
         }
-      </RadioButtonGroup>
-      <FlatButton type = "submit" label="Next" primary={true} backgroundColor="#93e7cf" />
+      </div>
+      <div type = "submit" label="Next" primary={true} backgroundColor="#93e7cf" />
     </form>
   );
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-import FlatButton from 'material-ui/RaisedButton';
+// import FlatButton from 'material-ui/RaisedButton';
 import { Link } from 'react-router-dom';
 
 const Offer = ({offer, handleOpenDecline}) => {
@@ -14,11 +14,9 @@ const Offer = ({offer, handleOpenDecline}) => {
           pathname,
           query: { id }
         }} >
-        <FlatButton label="More Detail" primary={true} backgroundColor="#93e7cf" />
+        {/* <FlatButton label="More Detail" primary={true} backgroundColor="#93e7cf" /> */}
       </Link>
-      {/* <Link to="/reasons" > */}
-        <FlatButton label="Decline" primary={true} backgroundColor="#93e7cf" onClick={()=> handleOpenDecline(offer.id)}/>
-      {/* </Link> */}
+      <div label="Decline" primary={true} backgroundColor="#93e7cf" onClick={()=> handleOpenDecline(offer.id)}/>
     </div>
   );
 };

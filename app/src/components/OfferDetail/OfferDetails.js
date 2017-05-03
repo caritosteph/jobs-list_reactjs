@@ -1,6 +1,6 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-import FlatButton from 'material-ui/RaisedButton';
+// import FlatButton from 'material-ui/RaisedButton';
 
 const OfferDetail = ({offerDetail}) => {
   return (
@@ -8,7 +8,7 @@ const OfferDetail = ({offerDetail}) => {
       <p>Title: {offerDetail.title}</p>
       <p>description: {offerDetail.description}</p>
       <p>companyName: {offerDetail.companyName}</p>
-      <FlatButton label="Action button" primary={true} backgroundColor="#93e7cf" />
+      <button label="Action button" primary={true} backgroundColor="#93e7cf" />
     </div>
   );
 };

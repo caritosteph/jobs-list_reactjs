@@ -1,17 +1,17 @@
 import React from 'react';
-import TextField from 'material-ui/TextField';
-import FlatButton from 'material-ui/RaisedButton';
+// import TextField from 'material-ui/TextField';
+// import FlatButton from 'material-ui/RaisedButton';
 import { PropTypes } from "prop-types";
 
 const ReasonComent = ({saveReasonComent}) => {
   return (
     <form onSubmit = {saveReasonComent}>
       <h3>Please enter your reason</h3>
-      <TextField
+      <input
         hintText = "Reason"
         name = "reasonComment"
       />
-      <FlatButton type="submit" label="Submit" primary={true} backgroundColor="#93e7cf" />
+      <button type="submit" label="Submit" primary={true} backgroundColor="#93e7cf" />
     </form>
   );
 };

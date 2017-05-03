@@ -61,7 +61,7 @@ export default {
       {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml&name=assets/images/[name].[ext]'},
       {test: /\.(jpe?g|png|gif)$/i, loader: 'file?name=assets/images/[name].[ext]'},
       {test: /\.ico$/, loader: 'file?name=[name].[ext]'},
-      {test: /(\.css|\.scss)$/, loader: ExtractTextPlugin.extract('css?sourceMap!sass?sourceMap')},
+      {test: /(\.css|\.scss)$/, loader: ExtractTextPlugin.extract('css?sourceMap!resolve-url!sass?sourceMap')},
       {test: /\.json$/, loader: "json"}
     ]
   }

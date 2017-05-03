@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import PropTypes from "prop-types";
 import OffersApi from "../../services/OffersApi";
 import OfferDetail from "../../components/OfferDetail/OfferDetails";
 
@@ -34,9 +33,5 @@ class OfferDetailContainer extends Component {
     return <OfferDetail offerDetail = {offerDetail} />;
   }
 }
-
-OfferDetailContainer.propTypes = {
-
-};
 
 export default OfferDetailContainer;

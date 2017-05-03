@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import { PropTypes } from "prop-types";
 import Login from "../../components/Login/Login";
 import LoginApi from "../../services/LoginApi";
 import { Redirect } from "react-router-dom";
@@ -20,10 +19,10 @@ class LoginContainer extends Component {
   _handleSubmit(e){
     e.preventDefault();
 
-    let username = e.target.username.value;
+    let email = e.target.email.value;
     let password = e.target.password.value;
 
-    let loginUser = {username, password};
+    let loginUser = {email, password};
     LoginApi.loginUser(loginUser)
     .then(response => {
       this.setState({
@@ -53,12 +52,10 @@ class LoginContainer extends Component {
       );
     }
 
-    return <Login handleSubmit = {this._handleSubmit}/>;
+    return (
+        <Login handleSubmit = {this._handleSubmit}/>
+    );
   }
 }
-
-// LoginContainer.propTypes = {
-//
-// };
 
 export default LoginContainer;
