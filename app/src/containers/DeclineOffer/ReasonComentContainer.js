@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import ReasonComent from "../../components/DeclineOffer/ReasonComent";
+import { PropTypes } from "prop-types";
 
 class ReasonComentContainer extends Component {
 
@@ -11,16 +12,21 @@ class ReasonComentContainer extends Component {
     e.preventDefault();
     let {saveDeclineValues, handleDecline} = this.props;
     let reasonComment = {
-      reasonComment: e.target.reasonComment.value
-    }
-    console.log(e.target.reasonComment.value);
+      reasonComment: e.currentTarget.reasonComment.value
+    };
+
     saveDeclineValues(reasonComment);
     handleDecline(e);
   }
 
   render() {
-    return <ReasonComentContainer saveReasonComent = {this._saveReasonComent}/>;
+    return <ReasonComent saveReasonComent = {this._saveReasonComent}/>;
   }
 }
+
+ReasonComentContainer.propTypes = {
+  saveDeclineValues: PropTypes.func.isRequired,
+  handleDecline: PropTypes.func.isRequired
+};
 
 export default ReasonComentContainer;

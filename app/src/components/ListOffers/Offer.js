@@ -24,8 +24,8 @@ const Offer = ({offer, handleOpenDecline}) => {
 };
 
 Offer.propTypes = {
-  offer: PropTypes.object.isRequired
-  // handleOpenDecline: PropTypes.function.isRequired
+  offer: PropTypes.object.isRequired,
+  handleOpenDecline: PropTypes.func.isRequired
 };
 
 export default Offer;

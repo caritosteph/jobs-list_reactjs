@@ -40,7 +40,7 @@ class ListOffersContainer extends Component {
   }
 
   render() {
-    let { offers, openDecline, id } = this.state;
+    let { offers, openDecline, offerId } = this.state;
 
     return (
       <div>
@@ -49,7 +49,7 @@ class ListOffersContainer extends Component {
             title = "Decline Offer"
             modal = {true}
             open = {openDecline} >
-            <WizardContainer id = {id}/>
+            <WizardContainer id = {offerId}/>
         </Dialog>
       </div>
     );

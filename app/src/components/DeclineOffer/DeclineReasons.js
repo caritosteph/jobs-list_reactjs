@@ -18,14 +18,14 @@ const DeclineReasons = ({reasons, saveReason}) => {
           ))
         }
       </RadioButtonGroup>
-      <FlatButton type="submit" label="Send" primary={true} backgroundColor="#93e7cf" />
+      <FlatButton type = "submit" label="Next" primary={true} backgroundColor="#93e7cf" />
     </form>
   );
 };
 
 DeclineReasons.propTypes = {
   reasons: PropTypes.array.isRequired,
-  // handleDecline: PropTypes.func.isRequired
+  saveReason: PropTypes.func.isRequired
 };
 
 export default DeclineReasons;
