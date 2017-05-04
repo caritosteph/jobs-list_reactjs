@@ -9,25 +9,24 @@ const Offer = ({offer, handleOpenDecline}) => {
   return (
     <div className="offer col s4">
       <div className="offer-header">
-        {/* <div className="row"> */}
-          <i class="material-icons">assignment</i>
-          <p>{offer.jobCategoryKey}</p>
-        {/* </div> */}
-        {/* <div className="row"> */}
-          <h4>{offer.title}</h4>
-        {/* </div> */}
-        {/* <div className="row"> */}
-          <h3>{offer.earningTotal}</h3>
-        {/* </div> */}
-        {/* <div className="row"> */}
-          <h5>{offer.earningHourly} pro Stunde</h5>
-        {/* </div> */}
+          <div>
+            <i className="material-icons ">assignment</i>
+            <div>
+              {offer.jobCategoryKey}
+            </div>
+            <div>
+              {offer.title}
+            </div>
+            <div>
+              {offer.earningTotal}
+            </div>
+            <div>
+              {offer.earningHourly} pro Stunde
+            </div>
+          </div>
       </div>
       <div className="offer-body">
-        {/* <div className="row"> */}
-          <p>{offer.location.street}</p>
-        {/* </div> */}
-        {/* <div className="row"> */}
+          <div>{offer.location.street}</div>
           <div className="col s6">
             <p>DATUM</p>
             <p>{offer.shifts[0].beginDate}</p>
@@ -36,7 +35,6 @@ const Offer = ({offer, handleOpenDecline}) => {
             <p>ZEIT</p>
             <p>{offer.shifts[0].beginDate} - {offer.shifts[0].endDate}</p>
           </div>
-        {/* </div> */}
       </div>
       <div className="offer-footer">
         <div className="row">
@@ -44,7 +42,7 @@ const Offer = ({offer, handleOpenDecline}) => {
               pathname,
               query: { id }
             }} >
-            <button className="waves-effect waves-light btn">ZEIG MIR DETAILS</button>
+            <button className="waves-effect waves-light btn blue-grey darken-2">ZEIG MIR DETAILS</button>
           </Link>
         </div>
         <div className="row">

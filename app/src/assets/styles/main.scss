@@ -3,6 +3,12 @@
 body {
   background-color: #83e2c4;
 }
+.btn {
+ box-shadow: none;
+ &:hover {
+   box-shadow: none;
+ }
+}
 
 .login, .button-login, .button-forgot-pass {
   text-align: center;
@@ -11,18 +17,20 @@ body {
   padding-top: 50px;
 }
 .offer {
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 .offer-header{
   text-align: center;
   background-color: #ff764d;
+  padding: 20px 0 20px 0;
 }
 .offer-body{
   background-color: #fff;
+  padding: 20px 0 20px 0;
 }
 .offer-footer{
   text-align: center;
   background-color: #fff;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding: 20px 0 20px 0;
 }

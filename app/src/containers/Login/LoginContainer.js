@@ -44,7 +44,7 @@ class LoginContainer extends Component {
   }
 
   render() {
-    let { loginUser, loginResponse } = this.state;
+    let { loginUser } = this.state;
 
     if (loginUser) {
       return (

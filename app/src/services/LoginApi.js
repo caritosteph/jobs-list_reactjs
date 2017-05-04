@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 import { LOGIN_REQUEST } from "../config/Urls";
 
 class LoginApi {

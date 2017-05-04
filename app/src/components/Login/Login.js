@@ -4,7 +4,7 @@ import logo from "../../assets/images/login.png";
 
 const Login = ({handleSubmit}) => {
   return (
-    <div className = "container ctn-login">
+    <div className = " ctn-login">
       <div className="row">
         <div className="col s6 offset-s3">
           <h5 className = "login">LOGIN</h5>
@@ -35,7 +35,7 @@ const Login = ({handleSubmit}) => {
         </div>
         <div className="row">
           <div className="col s6 offset-s3 button-login">
-            <img src = {logo}/>
+            <img src = {logo} className="responsive-img"/>
           </div>
         </div>
       </form>
