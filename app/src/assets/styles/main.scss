@@ -3,8 +3,14 @@
 body {
   background-color: #83e2c4;
 }
-.btn {
+.row{
+  margin-bottom: 0px!important;
+}
+
+.btn, .btn-flat {
  box-shadow: none;
+ width: 100%;
+ margin: 5px 0 5px 0;
  &:hover {
    box-shadow: none;
  }
@@ -20,17 +26,47 @@ body {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.offer-header{
+.offer-header {
   text-align: center;
-  background-color: #ff764d;
+  background-color: #ff9373;
   padding: 20px 0 20px 0;
 }
-.offer-body{
+.offer-body {
   background-color: #fff;
-  padding: 20px 0 20px 0;
+  padding: 20px 20px 0px 20px;
 }
-.offer-footer{
+
+.offer-footer {
   text-align: center;
   background-color: #fff;
-  padding: 20px 0 20px 0;
+  padding: 20px 15px 20px 15px;
+}
+.offer-title {
+  color: #fff;
+}
+.offer-jobCategory {
+  color: #37474f;
+  font-size: 12px;
+}
+.offer-earnTotal {
+  color: #37474f;
+  font-weight: 100;
+  margin: 0;
+}
+.offer-earnHourly {
+  color: #37474f;
+}
+.offer-dateTime {
+  color: #acacac;
+  font-weight: 300;
+  padding-top: 15px;
+}
+.offer-dateTime-value {
+  color: #37474f;
+  font-size: 20px;
+  font-weight: 300;
+  padding: 10px 0 20px 0;
+}
+.offer-location {
+  color: #37474f;
 }
