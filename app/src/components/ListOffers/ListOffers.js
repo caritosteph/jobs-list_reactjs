@@ -4,14 +4,16 @@ import Offer from "./Offer";
 
 const ListOffers = ({offers, handleOpenDecline}) => {
   return (
-    <div>
-      { offers.map((offer, key) => (
-          <Offer
-            key = {key}
-            offer = {offer}
-            handleOpenDecline = {handleOpenDecline}/>
-        ))
-      }
+    <div className="container">
+      <div className="row">
+        { offers.map((offer, key) => (
+            <Offer
+              key = {key}
+              offer = {offer}
+              handleOpenDecline = {handleOpenDecline}/>
+          ))
+        }
+      </div>
     </div>
   );
 };

@@ -10,8 +10,7 @@ class LoginContainer extends Component {
   constructor(props){
     super(props);
     this.state = {
-      loginUser: false,
-      loginResponse: {}
+      loginUser: false
     };
 
     this._handleSubmit = this._handleSubmit.bind(this);
@@ -26,11 +25,9 @@ class LoginContainer extends Component {
     let loginUser = {username, password};
     LoginApi.loginUser(loginUser)
     .then(response => {
-      console.log(response);
       if(response.status === 200 ) {
         this.setState({
-          loginUser: true,
-          loginResponse: response.data
+          loginUser: true
         });
         setAccessToken(response.data.access_token);
       }else {
@@ -51,10 +48,7 @@ class LoginContainer extends Component {
 
     if (loginUser) {
       return (
-        <Redirect to={{
-            pathname: '/offers',
-            query: { loginResponse }
-          }} />
+        <Redirect to="/offers" />
       );
     }
 

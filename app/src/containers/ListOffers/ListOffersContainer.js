@@ -22,12 +22,20 @@ class ListOffersContainer extends Component {
 
     OffersApi.getOffers()
     .then(response => {
-      this.setState({
-        offers: response.offers
-      });
+      if(response.status === 200) {
+        this.setState({
+          offers: response.data.offers
+        });
+      }else{
+        this.setState({
+          offers: []
+        });
+      }
     })
-    .catch(error => {
-      return error;
+    .catch(() => {
+      this.setState({
+        offers: []
+      });
     });
 
   }
