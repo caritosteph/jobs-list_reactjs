@@ -20,22 +20,22 @@ const Offer = ({offer, handleOpenDecline}) => {
       <div className="offer-header">
             <i className="material-icons ">assignment</i>
             <div className="offer-jobCategory">
-              {offer.jobCategoryKey}
+              { offer.jobCategoryKey }
             </div>
-            <h4 className="offer-title">{offer.title}</h4>
-            <h1 className="offer-earnTotal">{Utils.getCurrencyFormat(offer.earningTotal)}</h1>
-            <span className="offer-earnHourly"> {Utils.getCurrencyFormat(offer.earningHourly)} pro Stunde </span>
+            <h4 className="offer-title">{ offer.title }</h4>
+            <h1 className="offer-earnTotal">{Utils.getCurrencyFormat(offer.earningTotal, true)}</h1>
+            <span className="offer-earnHourly">{Utils.getCurrencyFormat(offer.earningHourly, true)} pro Stunde </span>
       </div>
       <div className="offer-body ">
-        <i className="material-icons">place</i><span className="offer-location">{offer.location.street}</span>
+        <i className="material-icons">place</i><span className="offer-location">{ offer.location.street }</span>
         <div className="row">
           <div className="col s6">
-            <div className="offer-dateTime">DATUM</div>
-            <div className="offer-dateTime-value">{day} {date}</div>
+            <h6 className="offer-subtitle">DATUM</h6>
+            <div className="offer-dateTime-value">{ day } { date }</div>
           </div>
           <div className="col s6">
-            <div className="offer-dateTime">ZEIT</div>
-            <div className="offer-dateTime-value">{beginTime} - {endTime}</div>
+            <h6 className="offer-subtitle">ZEIT</h6>
+            <div className="offer-dateTime-value">{ beginTime } - { endTime }</div>
           </div>
         </div>
       </div>
@@ -46,7 +46,7 @@ const Offer = ({offer, handleOpenDecline}) => {
               }} >
               <button className="waves-effect waves-light btn blue-grey darken-3">ZEIG MIR DETAILS</button>
             </Link>
-          <button className="waves-effect waves-teal btn-flat" onClick={()=> handleOpenDecline(offer.id)}>NICHT INTERESSIERT</button>
+          <button className="waves-effect waves-teal btn-flat" onClick={()=> handleOpenDecline(id)}>NICHT INTERESSIERT</button>
       </div>
     </div>
   );

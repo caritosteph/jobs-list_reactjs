@@ -2,15 +2,21 @@
 
 body {
   background-color: #83e2c4;
+  color: #455a64;
 }
 .row{
   margin-bottom: 0px!important;
+}
+p {
+  margin: 5px 0;
+  color: #455a64;
 }
 
 .btn, .btn-flat {
  box-shadow: none;
  width: 100%;
  margin: 5px 0 5px 0;
+ text-align: center;
  &:hover {
    box-shadow: none;
  }
@@ -43,30 +49,102 @@ body {
 }
 .offer-title {
   color: #fff;
+  font-weight: 600;
 }
 .offer-jobCategory {
   color: #37474f;
   font-size: 12px;
 }
-.offer-earnTotal {
+.offer-earnTotal,.offer-earnTotal-shifts {
   color: #37474f;
   font-weight: 100;
   margin: 0;
 }
+.offer-earnTotal-shifts{
+  font-size: 6em;
+}
 .offer-earnHourly {
-  color: #37474f;
+  // color: #37474f;
 }
 .offer-dateTime {
-  color: #acacac;
-  font-weight: 300;
-  padding-top: 15px;
+  font-size: 20px;
 }
 .offer-dateTime-value {
-  color: #37474f;
+  // color: #37474f;
   font-size: 20px;
   font-weight: 300;
   padding: 10px 0 20px 0;
 }
 .offer-location {
-  color: #37474f;
+  // color: #37474f;
+}
+.offer-status, .offer-instruction{
+  border: 1px solid #ff9373;
+  padding: 10px 20px;
+  position: relative;
+  margin: 30px 0;
+}
+.offer-status-icon{
+  border: 1px solid #ff9373;
+  border-radius: 100%;
+  padding: 5px;
+  color: #ff9373;
+  position: absolute;
+  top: -20px;
+  right: 20px;
+  background-color: #fff;
+}
+
+.offer-shifts {
+  text-align: center;
+  margin: 20px 0 20px 0;
+  padding: 10px 20px;
+}
+.offer-date-details {
+  border: 1px solid #acacac;
+  border-radius: 3px;
+  padding: 15px 30px;
+  margin-bottom: 20px;
+}
+.offer-salary-details {
+  font-size: 13px;
+  margin: 0 20px 30px 20px;
+}
+.offer-subtitle{
+  color: #acacac;
+  font-weight: 400;
+  // padding-top: 15px;
+}
+.offer-breakTypes {
+  margin: 30px 20px;
+}
+.offer-salary-align {
+  text-align: right;
+}
+.offer-salary-detail {
+  color: #acacac;
+}
+.offer-salary {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #acacac;
+}
+.offer-total-salary {
+  font-weight: bold;
+}
+.offer-location, .offer-description {
+  margin: 30px 20px;
+}
+.offer-location-details{
+  font-size: 14px;
+}
+.offer-location-details p{
+  margin: 0;
+}
+.offer-subtitle-instruction {
+  color: #ff9373;
+  font-weight: 400;
+}
+.offer-action {
+  margin: 0 20px;
+  padding-bottom: 30px;
 }
