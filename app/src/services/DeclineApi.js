@@ -8,7 +8,7 @@ class DeclineApi {
 
     return axios({
       method: "get",
-      url: DECLINE_REASON_REQUEST
+      url: DECLINE_REASON_REQUEST,
       headers: {
         "Authorization": `Bearer ${getAccessToken()}`
       }

@@ -11,6 +11,7 @@ const ReasonComent = ({saveReasonComent}) => {
         hintText = "Reason"
         name = "reasonComment"
       />
+      
       <button type="submit" label="Submit" primary={true} backgroundColor="#93e7cf" />
     </form>
   );

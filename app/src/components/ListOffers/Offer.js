@@ -3,7 +3,7 @@ import { PropTypes } from "prop-types";
 import { Link } from 'react-router-dom';
 import Utils from "../../Utils/Utils";
 
-const Offer = ({offer, handleOpenDecline}) => {
+const Offer = ({offer, handleOpenDecline, href}) => {
   const pathname = "/offerDetail/" + offer.id;
   const id = offer.id;
   const beginDate = offer.shifts[0].beginDate;
@@ -46,7 +46,7 @@ const Offer = ({offer, handleOpenDecline}) => {
               }} >
               <button className="waves-effect waves-light btn blue-grey darken-3">ZEIG MIR DETAILS</button>
             </Link>
-          <button className="waves-effect waves-teal btn-flat" onClick={()=> handleOpenDecline(id)}>NICHT INTERESSIERT</button>
+          <a href={href} className="waves-effect waves-teal btn-flat" onClick={()=> handleOpenDecline(id)}>NICHT INTERESSIERT</a>
       </div>
     </div>
   );
@@ -54,7 +54,8 @@ const Offer = ({offer, handleOpenDecline}) => {
 
 Offer.propTypes = {
   offer: PropTypes.object.isRequired,
-  handleOpenDecline: PropTypes.func.isRequired
+  handleOpenDecline: PropTypes.func.isRequired,
+  href: PropTypes.string.isRequired
 };
 
 export default Offer;

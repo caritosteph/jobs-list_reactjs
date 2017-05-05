@@ -46,17 +46,31 @@ class WizardContainer extends Component {
 
   render() {
     let {step} = this.state;
+    let view = "";
 
     switch (step) {
       case 1:
-        return ( <DeclineReasonsContainer
+        view = ( <DeclineReasonsContainer
                   nextStep = {this._handleNextStep}
                   saveDeclineValues = {this._saveDeclineValues} /> );
+        break;
       case 2:
-        return ( <ReasonComentContainer
+        view = ( <ReasonComentContainer
                   saveDeclineValues = {this._saveDeclineValues}
                   handleDecline = {this._handleDecline} /> );
+        break;
     }
+
+    return (
+      <div id="wizard" className="modal open">
+        <div className="modal-content">
+          { view }
+        </div>
+        {/* <div class="modal-footer">
+          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div> */}
+      </div>
+    );
 
   }
 }

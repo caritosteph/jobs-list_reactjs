@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 // import { PropTypes } from "prop-types";
 import ListOffers from "../../components/ListOffers/ListOffers";
 import OffersApi from "../../services/OffersApi";
-// import WizardContainer from "../DeclineOffer/WizardContainer";
-// import Dialog from 'material-ui/Dialog';
+import WizardContainer from "../DeclineOffer/WizardContainer";
+// import $ from 'jquery';
 
 class ListOffersContainer extends Component {
 
@@ -41,31 +41,26 @@ class ListOffersContainer extends Component {
   }
 
   _handleOpenDecline(id) {
-    this.setState({
-      openDecline: true,
-      offerId: id
-    });
+      this.setState({
+        openDecline: true,
+        offerId: id
+      });
+
+      // $(".modal-trigger").modal();
+      // $('.modal').modal();
   }
 
   render() {
-    let { offers } = this.state;
-// , openDecline, offerId
+    let { offers, offerId } = this.state;
+
     return (
       <div>
-        <ListOffers offers = {offers} handleOpenDecline = {this._handleOpenDecline}/>
-        {/* <Dialog
-            title = "Decline Offer"
-            modal = {true}
-            open = {openDecline} >
-            <WizardContainer id = {offerId}/>
-        </Dialog> */}
+        <ListOffers offers = {offers} handleOpenDecline = {this._handleOpenDecline} href="#wizard"/>
+        <WizardContainer id = {offerId} />
       </div>
     );
+
   }
 }
-
-// ListOffersContainer.propTypes = {
-//
-// };
 
 export default ListOffersContainer;

@@ -8,7 +8,8 @@ class DeclineReasonsContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      reasons: []
+      reasons: [],
+      error: ""
     };
 
     this._saveReason =  this._saveReason.bind(this);
@@ -18,12 +19,20 @@ class DeclineReasonsContainer extends Component {
 
     DeclineApi.getDeclineReasons()
     .then(response => {
-      this.setState({
-        reasons: response.reasons
-      });
+      if(response.status === 200) {
+        this.setState({
+          reasons: response.data.reasons
+        });
+      }else{
+        this.setState({
+          reasons: []
+        });
+      }
     })
     .catch(error => {
-      return error;
+      this.setState({
+        error: error
+      });
     });
 
   }
