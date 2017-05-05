@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-// import { PropTypes } from "prop-types";
 import ListOffers from "../../components/ListOffers/ListOffers";
 import OffersApi from "../../services/OffersApi";
 import WizardContainer from "../DeclineOffer/WizardContainer";
-// import $ from 'jquery';
 
 class ListOffersContainer extends Component {
 
@@ -11,15 +9,13 @@ class ListOffersContainer extends Component {
     super(props);
     this.state = {
       offers: [],
-      openDecline: false,
       offerId: ""
     };
-
     this._handleOpenDecline = this._handleOpenDecline.bind(this);
+    this._updateOffers = this._updateOffers.bind(this);
   }
 
   componentWillMount() {
-
     OffersApi.getOffers()
     .then(response => {
       if(response.status === 200) {
@@ -32,22 +28,29 @@ class ListOffersContainer extends Component {
         });
       }
     })
-    .catch(() => {
-      this.setState({
-        offers: []
-      });
+    .catch((error) => {
+      // this.setState({
+      //   offers: []
+      // });
+      return error;
     });
-
   }
 
   _handleOpenDecline(id) {
-      this.setState({
-        openDecline: true,
-        offerId: id
-      });
+    this.setState({
+      offerId: id
+    });
+    $('#wizard').openModal();
+  }
 
-      // $(".modal-trigger").modal();
-      // $('.modal').modal();
+  _updateOffers() {
+    let { offers, offerId } = this.state;
+    let offersUpdated = offers.filter((offer) => {
+      return offer.id != offerId;
+    });
+    this.setState({
+      offers: offersUpdated
+    });
   }
 
   render() {
@@ -55,8 +58,8 @@ class ListOffersContainer extends Component {
 
     return (
       <div>
-        <ListOffers offers = {offers} handleOpenDecline = {this._handleOpenDecline} href="#wizard"/>
-        <WizardContainer id = {offerId} />
+        <ListOffers offers = {offers} handleOpenDecline = {this._handleOpenDecline} />
+        <WizardContainer id = {offerId} updateOffers = {this._updateOffers}/>
       </div>
     );
 

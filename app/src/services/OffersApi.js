@@ -1,6 +1,6 @@
 import axios from "axios";
-import { OFFERS_REQUEST, OFFER_REQUEST } from "../config/Urls";
-import { getAccessToken } from "../config/AuthConfig";
+import { OFFERS_REQUEST, OFFER_REQUEST } from "../Utils/Urls";
+import { getAccessToken } from "../Utils/AuthConfig";
 
 class OffersApi {
 

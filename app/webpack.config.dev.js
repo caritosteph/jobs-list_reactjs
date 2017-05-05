@@ -19,7 +19,11 @@ export default {
   },
   plugins: [
     new webpack.ProvidePlugin({
-      'Promise': 'es6-promise'
+      'Promise': 'es6-promise',
+      jQuery: 'jquery',
+      $: 'jquery',
+      "window.jQuery" : 'jquery',
+      jquery: 'jquery'
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development'),

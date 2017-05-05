@@ -29,7 +29,7 @@ const OfferDetail = ({offerDetail}) => {
           <div className = "offer-status">
             <i className="material-icons offer-status-icon">show_chart</i>
             <h6 className="offer-subtitle">STATUS</h6>
-            <div className="offer-status-title">11.04.2016 at 9:30</div>
+            <div className="offer-subtitle">11.04.2016 at 9:30</div>
             Glückwunsch! Du hast den Job bekommen.
             Bitte überprüfe die Anforderungen zu diesem Job.
           </div>

@@ -50,8 +50,13 @@ class DeclineReasonsContainer extends Component {
 
   render() {
     let {reasons} = this.state;
+    let {handleCancel} = this.props;
 
-    return <DeclineReasons reasons = {reasons} saveReason = {this._saveReason}/>;
+    let fns = {
+      saveReason: this._saveReason,
+      handleCancel: handleCancel
+    }
+    return <DeclineReasons reasons = {reasons} fns = {fns} />;
   }
 }
 

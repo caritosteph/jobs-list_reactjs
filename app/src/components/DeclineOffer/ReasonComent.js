@@ -1,24 +1,31 @@
 import React from 'react';
-// import TextField from 'material-ui/TextField';
-// import FlatButton from 'material-ui/RaisedButton';
 import { PropTypes } from "prop-types";
 
-const ReasonComent = ({saveReasonComent}) => {
+const ReasonComent = ({fns}) => {
+
+  const { saveReasonComent, handleCancel } = fns;
+
   return (
     <form onSubmit = {saveReasonComent}>
-      <h3>Please enter your reason</h3>
-      <input
-        hintText = "Reason"
-        name = "reasonComment"
-      />
-      
-      <button type="submit" label="Submit" primary={true} backgroundColor="#93e7cf" />
+      <h5 className="offer-decline-title">Please enter your reason</h5>
+      <div className="input-field col s6">
+         <input type="text" name="reasonComment"/>
+         <label htmlFor="reason">Reason</label>
+      </div>
+      <div className="row offer-decline-button">
+        <div className="col s6">
+          <button className="waves-effect waves-teal btn-flat" onClick = {handleCancel}>NICHT JETZT</button>
+        </div>
+        <div className="col s6">
+          <button type="submit" className="waves-effect waves-teal btn-flat">ABSENDEN</button>
+        </div>
+      </div>
     </form>
   );
 };
 
 ReasonComent.propTypes = {
-  saveReasonComent: PropTypes.func.isRequired
+  fns: PropTypes.object.isRequired
 };
 
 export default ReasonComent;

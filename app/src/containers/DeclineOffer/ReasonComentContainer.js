@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import ReasonComent from "../../components/DeclineOffer/ReasonComent";
 import { PropTypes } from "prop-types";
 
@@ -20,7 +20,12 @@ class ReasonComentContainer extends Component {
   }
 
   render() {
-    return <ReasonComent saveReasonComent = {this._saveReasonComent}/>;
+    let { handleCancel } = this.props;
+    let fns = {
+      saveReasonComent: this._saveReasonComent,
+      handleCancel: handleCancel
+    }
+    return <ReasonComent fns = {fns}/>;
   }
 }
 

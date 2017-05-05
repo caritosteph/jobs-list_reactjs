@@ -121,7 +121,7 @@ p {
 .offer-salary-align {
   text-align: right;
 }
-.offer-salary-detail {
+.offer-salary-detail {
   color: #acacac;
 }
 .offer-salary {
@@ -147,4 +147,14 @@ p {
 .offer-action {
   margin: 0 20px;
   padding-bottom: 30px;
+}
+.offer-decline-title {
+  color: #000;
+}
+.modal {
+  width: 30%;
+}
+.offer-decline-button button{
+  color: #26a69a;
+  font-weight: bold;
 }

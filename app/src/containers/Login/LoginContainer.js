@@ -3,7 +3,7 @@ import Login from "../../components/Login/Login";
 import LoginError from "../../components/Login/LoginError";
 import LoginApi from "../../services/LoginApi";
 import { Redirect } from "react-router-dom";
-import { setAccessToken } from "../../config/AuthConfig";
+import { setAccessToken } from "../../Utils/AuthConfig";
 
 class LoginContainer extends Component {
 
@@ -36,10 +36,8 @@ class LoginContainer extends Component {
         });
       }
     })
-    .catch(() => {
-      this.setState({
-        loginuser: false
-      });
+    .catch((error) => {
+      return error;
     });
   }
 
