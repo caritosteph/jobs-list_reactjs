@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import DeclineReasonsContainer from "./DeclineReasonsContainer";
 import ReasonComentContainer from "./ReasonComentContainer";
 import DeclineApi from "../../services/DeclineApi";
+import Error from "../../components/common/Error";
 import { PropTypes } from "prop-types";
-import { Redirect } from "react-router-dom";
 
 let declineValues = {
   reason: "",
@@ -11,6 +11,7 @@ let declineValues = {
 };
 
 class WizardContainer extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -42,18 +43,19 @@ class WizardContainer extends Component {
 
   _handleDecline(e) {
     e.preventDefault();
+
     let { id, updateOffers } = this.props;
-    DeclineApi.declineOffer(id,declineValues)
-    .then(response => {
-      if(response.status === 200){
+
+    DeclineApi.declineOffer(id, declineValues)
+    .then( response => {
+      if( response.status === 200 ){
         updateOffers();
         this._init();
-      }else{
-        //<Error />
       }
     })
-    .catch(error => {
-      return error
+    .catch( () => {
+      this._init();
+      $('#error').openModal();
     });
 
   }
@@ -65,7 +67,6 @@ class WizardContainer extends Component {
 
   render() {
     let { step } = this.state;
-    let { handleCancel } = this.props;
     let view = "";
 
     switch (step) {
@@ -84,17 +85,21 @@ class WizardContainer extends Component {
     }
 
     return (
-      <div id="wizard" className="modal">
-        <div className="modal-content">
-          { view }
+      <div>
+        <div id = "wizard" className = "modal">
+          <div className = "modal-content">
+            { view }
+          </div>
         </div>
+        <Error />
       </div>
     );
   }
 }
 
 WizardContainer.propTypes = {
-  id: PropTypes.string.isRequired
+  id: PropTypes.string.isRequired,
+  updateOffers: PropTypes.func.isRequired
 };
 
 export default WizardContainer;

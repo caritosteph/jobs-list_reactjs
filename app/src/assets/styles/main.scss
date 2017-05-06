@@ -1,12 +1,25 @@
 @import "../../../../node_modules/materialize-css/sass//ghpages-materialize";
 
+/*
+ * General styles
+ */
+
 body {
   background-color: #83e2c4;
   color: #455a64;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
-.row{
+
+main {
+    flex: 1 0 auto;
+}
+
+.row {
   margin-bottom: 0px!important;
 }
+
 p {
   margin: 5px 0;
   color: #455a64;
@@ -22,69 +35,104 @@ p {
  }
 }
 
-.login, .button-login, .button-forgot-pass {
-  text-align: center;
+.modal {
+  width: 30%;
 }
-.ctn-login {
+
+/*
+ * Login styles
+ */
+
+.content__login {
   padding-top: 50px;
 }
-.offer {
+
+.label__login, .button__login, .image__login {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/*
+ * Loading style
+ */
+
+.content__loading {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  text-align: center;
+}
+
+/*
+ * Offer styles
+ */
+
+.content___offer_header {
+  text-align: center;
+}
+
+.content__offer {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.offer-header {
+
+.content__offer_subtitle{
+  color: #acacac;
+  font-weight: 400;
+}
+
+.content__offer__header {
   text-align: center;
   background-color: #ff9373;
   padding: 20px 0 20px 0;
 }
-.offer-body {
+
+.content__offer__body {
   background-color: #fff;
   padding: 20px 20px 0px 20px;
 }
 
-.offer-footer {
+.content__offer__footer {
   text-align: center;
   background-color: #fff;
-  padding: 20px 15px 20px 15px;
+  padding: 0px 15px 20px 15px;
 }
-.offer-title {
+
+.content__offer_title {
   color: #fff;
   font-weight: 600;
 }
-.offer-jobCategory {
+
+.content__offer_jobCategory {
   color: #37474f;
   font-size: 12px;
 }
-.offer-earnTotal,.offer-earnTotal-shifts {
+
+.content__offer_earnTotal {
   color: #37474f;
   font-weight: 100;
   margin: 0;
 }
-.offer-earnTotal-shifts{
-  font-size: 6em;
-}
-.offer-earnHourly {
-  // color: #37474f;
-}
-.offer-dateTime {
-  font-size: 20px;
-}
-.offer-dateTime-value {
-  // color: #37474f;
+
+.content__offer_dateTime {
   font-size: 20px;
   font-weight: 300;
   padding: 10px 0 20px 0;
 }
-.offer-location {
-  // color: #37474f;
-}
-.offer-status, .offer-instruction{
+
+/*
+ * Offer Details Styles
+ */
+
+.content__offer_status,
+.content__offer_instruction {
   border: 1px solid #ff9373;
   padding: 10px 20px;
   position: relative;
   margin: 30px 0;
 }
-.offer-status-icon{
+
+.content__offer_status-icon{
   border: 1px solid #ff9373;
   border-radius: 100%;
   padding: 5px;
@@ -95,66 +143,85 @@ p {
   background-color: #fff;
 }
 
-.offer-shifts {
+.content__offer_shifts {
   text-align: center;
   margin: 20px 0 20px 0;
-  padding: 10px 20px;
 }
-.offer-date-details {
+
+.content__offer_shifts-earnTotal{
+  font-size: 6em;
+}
+
+.content__offer_salary {
+  font-size: 13px;
+  margin: 0 20px 10px 20px;
+}
+
+.content__offer__salary_detail {
+  padding-bottom: 10px;
+}
+
+.content__offer_salary-align {
+  text-align: right;
+}
+
+.content__offer_salary_subtitle {
+  color: #acacac;
+}
+
+.content__offer_date {
   border: 1px solid #acacac;
   border-radius: 3px;
   padding: 15px 30px;
   margin-bottom: 20px;
 }
-.offer-salary-details {
-  font-size: 13px;
-  margin: 0 20px 30px 20px;
-}
-.offer-subtitle{
-  color: #acacac;
-  font-weight: 400;
-  // padding-top: 15px;
-}
-.offer-breakTypes {
+
+.content__offer_breakTypes {
   margin: 30px 20px;
 }
-.offer-salary-align {
-  text-align: right;
-}
-.offer-salary-detail {
-  color: #acacac;
-}
-.offer-salary {
-  padding-bottom: 20px;
-  border-bottom: 1px solid #acacac;
-}
-.offer-total-salary {
-  font-weight: bold;
-}
-.offer-location, .offer-description {
+
+.content__offer_location,
+.content__offer_description {
   margin: 30px 20px;
 }
-.offer-location-details{
+
+.content__offer_location_details{
   font-size: 14px;
 }
+
 .offer-location-details p{
   margin: 0;
 }
-.offer-subtitle-instruction {
+
+.content__offer_subtitle-color {
   color: #ff9373;
   font-weight: 400;
 }
-.offer-action {
+
+.content__offer_action {
   margin: 0 20px;
   padding-bottom: 30px;
 }
+
+/*
+ * Offer Decline style
+ */
+
 .offer-decline-title {
   color: #000;
 }
-.modal {
-  width: 30%;
-}
+
 .offer-decline-button button{
   color: #26a69a;
   font-weight: bold;
+}
+
+/*
+ * EmptyOffer style
+ */
+
+.container__emptyOffer {
+  text-align: center;
+  padding-top: 10%;
+  color: #fff;
 }

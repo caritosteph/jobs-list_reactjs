@@ -8,8 +8,10 @@ class ReasonComentContainer extends Component {
     super(props);
     this._saveReasonComent = this._saveReasonComent.bind(this);
   }
+
   _saveReasonComent(e) {
     e.preventDefault();
+
     let {saveDeclineValues, handleDecline} = this.props;
     let reasonComment = {
       reasonComment: e.currentTarget.reasonComment.value
@@ -24,14 +26,16 @@ class ReasonComentContainer extends Component {
     let fns = {
       saveReasonComent: this._saveReasonComent,
       handleCancel: handleCancel
-    }
+    };
+    
     return <ReasonComent fns = {fns}/>;
   }
 }
 
 ReasonComentContainer.propTypes = {
   saveDeclineValues: PropTypes.func.isRequired,
-  handleDecline: PropTypes.func.isRequired
+  handleDecline: PropTypes.func.isRequired,
+  handleCancel: PropTypes.func.isRequired
 };
 
 export default ReasonComentContainer;

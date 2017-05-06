@@ -21,8 +21,8 @@ class LoginContainer extends Component {
 
     let username = e.target.username.value;
     let password = e.target.password.value;
-
     let loginUser = {username, password};
+
     LoginApi.loginUser(loginUser)
     .then(response => {
       if(response.status === 200 ) {
@@ -31,13 +31,11 @@ class LoginContainer extends Component {
         });
         setAccessToken(response.data.access_token);
       }else {
-        this.setState({
-          loginUser: false
-        });
+        $('#login').openModal();
       }
     })
-    .catch((error) => {
-      return error;
+    .catch(() => {
+      $('#login').openModal();
     });
   }
 
@@ -52,8 +50,8 @@ class LoginContainer extends Component {
 
     return (
       <div>
-        <Login handleSubmit = {this._handleSubmit}/>
-        {!loginUser ? <LoginError /> : ""}
+        <Login handleSubmit = {this._handleSubmit} />
+        <LoginError />
       </div>
 
     );

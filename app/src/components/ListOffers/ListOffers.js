@@ -4,8 +4,8 @@ import Offer from "./Offer";
 
 const ListOffers = ({offers, handleOpenDecline}) => {
   return (
-    <div className="container">
-      <div className="row">
+    <div className = "container">
+      <div className = "row">
         { offers.map((offer, key) => (
             <Offer
               key = {key}
@@ -17,10 +17,10 @@ const ListOffers = ({offers, handleOpenDecline}) => {
     </div>
   );
 };
-//
+
 ListOffers.propTypes = {
   offers: PropTypes.array.isRequired,
   handleOpenDecline: PropTypes.func.isRequired
-  // href: PropTypes.string.isRequired
 };
+
 export default ListOffers;

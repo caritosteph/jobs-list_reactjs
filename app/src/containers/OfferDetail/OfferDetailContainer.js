@@ -9,8 +9,7 @@ class OfferDetailContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      offerDetail: null,
-      error: null
+      offerDetail: null
     };
   }
 
@@ -25,32 +24,32 @@ class OfferDetailContainer extends Component {
         });
       }else{
         this.setState({
-          offerDetail: null,
-          error: "error"
+          offerDetail: null
         });
       }
     })
-    .catch(error => {
-      this.setState({
-        error: error
-      });
+    .catch(() => {
+      $("#error").openModal();
     });
 
   }
 
   render() {
-    let { offerDetail, error } = this.state;
+    let { offerDetail } = this.state;
     let view = "";
 
-    if(offerDetail){
+    if( offerDetail ){
       view = <OfferDetail offerDetail = {offerDetail} />;
-    }else if (error) {
-      view = <Error />;
-    }else {
+    } else {
       view = <Loading />;
     }
 
-    return view;
+    return (
+      <div>
+        { view }
+        <Error />
+      </div>
+    );
   }
 }
 

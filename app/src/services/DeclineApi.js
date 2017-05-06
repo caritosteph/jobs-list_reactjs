@@ -1,5 +1,5 @@
 import axios from "axios";
-import { DECLINE_REASON_REQUEST, DECLINE_OFFER_REQUEST } from "../config/Urls";
+import { DECLINE_REASON_REQUEST, DECLINE_OFFER_REQUEST } from "../Utils/Urls";
 import { getAccessToken } from "../Utils/AuthConfig";
 
 class DeclineApi {

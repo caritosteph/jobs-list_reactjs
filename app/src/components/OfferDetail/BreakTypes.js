@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { PropTypes } from "prop-types";
 import BreakType from "./BreakType";
 
@@ -7,7 +7,7 @@ const BreakTypes = ({breakTypes}) => {
     <div>
       {
         breakTypes.map((breakType, key) => (
-          <BreakType key= {key} breakType = {breakType}/>
+          <BreakType key = {key} breakType = {breakType}/>
         ))
       }
     </div>
@@ -17,4 +17,5 @@ const BreakTypes = ({breakTypes}) => {
 BreakTypes.propTypes = {
   breakTypes: PropTypes.array.isRequired
 };
+
 export default BreakTypes;

@@ -7,22 +7,22 @@ const DeclineReasons = ({reasons, fns}) => {
 
   return (
     <div>
-      <h5 className="offer-decline-title">Warum lehnst Du diesen Job ab?</h5>
+      <h5 className = "offer-decline-title">Warum lehnst Du diesen Job ab?</h5>
       <form onSubmit = {saveReason} >
         {
           reasons.map((reason, key) => (
             <p key = {key}>
-              <input className="with-gap" name="reasons" type="radio" id= {key} value = {reason.name}/>
-              <label htmlFor={key}>{reason.label}</label>
+              <input className = "with-gap" name = "reasons" type = "radio" id = {key} value = {reason.name}/>
+              <label htmlFor = {key}>{ reason.label }</label>
             </p>
           ))
         }
-        <div className="row offer-decline-button">
-          <div className="col s6">
-            <button className="waves-effect waves-teal btn-flat" onClick = {handleCancel}>NICHT JETZT</button>
+        <div className = "row offer-decline-button">
+          <div className = "col s6">
+            <button className = "waves-effect waves-teal btn-flat" onClick = {handleCancel}>NICHT JETZT</button>
           </div>
-          <div className="col s6">
-            <button type="submit" className="waves-effect waves-teal btn-flat">ABSENDEN</button>
+          <div className = "col s6">
+            <button type = "submit" className = "waves-effect waves-teal btn-flat">ABSENDEN</button>
           </div>
         </div>
       </form>

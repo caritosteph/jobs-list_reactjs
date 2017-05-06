@@ -8,8 +8,7 @@ class DeclineReasonsContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      reasons: [],
-      error: ""
+      reasons: []
     };
 
     this._saveReason =  this._saveReason.bind(this);
@@ -18,28 +17,23 @@ class DeclineReasonsContainer extends Component {
   componentWillMount() {
 
     DeclineApi.getDeclineReasons()
-    .then(response => {
-      if(response.status === 200) {
+    .then( response => {
+      if( response.status === 200 ) {
         this.setState({
           reasons: response.data.reasons
         });
-      }else{
+      } else {
         this.setState({
           reasons: []
         });
       }
-    })
-    .catch(error => {
-      this.setState({
-        error: error
-      });
     });
 
   }
 
   _saveReason(e) {
     e.preventDefault();
-    let {saveDeclineValues, nextStep} = this.props;
+    let { saveDeclineValues, nextStep } = this.props;
     let reason = {
       reason: e.currentTarget.reasons.value
     };
@@ -49,20 +43,22 @@ class DeclineReasonsContainer extends Component {
   }
 
   render() {
-    let {reasons} = this.state;
-    let {handleCancel} = this.props;
+    let { reasons } = this.state;
+    let { handleCancel } = this.props;
 
     let fns = {
       saveReason: this._saveReason,
       handleCancel: handleCancel
-    }
+    };
+
     return <DeclineReasons reasons = {reasons} fns = {fns} />;
   }
 }
 
 DeclineReasonsContainer.propTypes = {
   saveDeclineValues: PropTypes.func.isRequired,
-  nextStep: PropTypes.func.isRequired
+  nextStep: PropTypes.func.isRequired,
+  handleCancel: PropTypes.func.isRequired
 };
 
 export default DeclineReasonsContainer;

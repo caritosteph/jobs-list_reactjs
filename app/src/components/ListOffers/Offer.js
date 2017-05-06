@@ -1,6 +1,6 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import Utils from "../../Utils/Utils";
 
 const Offer = ({offer, handleOpenDecline}) => {
@@ -16,37 +16,37 @@ const Offer = ({offer, handleOpenDecline}) => {
   const endTime = Utils.getHourFormat(endDate);
 
   return (
-    <div className="offer col s4">
-      <div className="offer-header">
-            <i className="material-icons ">assignment</i>
-            <div className="offer-jobCategory">
+    <div className = "content__offer col s4">
+      <div className = "content__offer__header">
+            <i className = "material-icons ">assignment</i>
+            <div className = "content__offer_jobCategory">
               { offer.jobCategoryKey }
             </div>
-            <h4 className="offer-title">{ offer.title }</h4>
-            <h1 className="offer-earnTotal">{Utils.getCurrencyFormat(offer.earningTotal, true)}</h1>
-            <span className="offer-earnHourly">{Utils.getCurrencyFormat(offer.earningHourly, true)} pro Stunde </span>
+            <h4 className = "content__offer_title">{ offer.title }</h4>
+            <h1 className = "content__offer_earnTotal">{ Utils.getCurrencyFormat(offer.earningTotal, true) }</h1>
+            <span>{ Utils.getCurrencyFormat(offer.earningHourly, true) } pro Stunde </span>
       </div>
-      <div className="offer-body ">
-        <i className="material-icons">place</i><span className="offer-location">{ offer.location.street }</span>
-        <div className="row">
-          <div className="col s6">
-            <h6 className="offer-subtitle">DATUM</h6>
-            <div className="offer-dateTime-value">{ day } { date }</div>
+      <div className = "content__offer__body">
+        <i className = "material-icons">place</i><span>{ offer.location.street }</span>
+        <div className = "row">
+          <div className = "col s6">
+            <h6 className = "content__offer_subtitle">DATUM</h6>
+            <div className = "content__offer_dateTime">{ day } { date }</div>
           </div>
-          <div className="col s6">
-            <h6 className="offer-subtitle">ZEIT</h6>
-            <div className="offer-dateTime-value">{ beginTime } - { endTime }</div>
+          <div className = "col s6">
+            <h6 className = "content__offer_subtitle">ZEIT</h6>
+            <div className = "content__offer_dateTime">{ beginTime } - { endTime }</div>
           </div>
         </div>
       </div>
-      <div className="offer-footer">
+      <div className="content__offer__footer">
             <Link to={{
                 pathname,
                 query: { id }
               }} >
-              <button className="waves-effect waves-light btn blue-grey darken-3">ZEIG MIR DETAILS</button>
+              <button className = "waves-effect waves-light btn blue-grey darken-3">ZEIG MIR DETAILS</button>
             </Link>
-          <button data-target="wizard" className="waves-effect waves-teal btn-flat" onClick={()=> handleOpenDecline(id)}>NICHT INTERESSIERT</button>
+          <button data-target = "wizard" className = "waves-effect waves-teal btn-flat" onClick={()=> handleOpenDecline(id)}>NICHT INTERESSIERT</button>
       </div>
     </div>
   );
@@ -55,7 +55,6 @@ const Offer = ({offer, handleOpenDecline}) => {
 Offer.propTypes = {
   offer: PropTypes.object.isRequired,
   handleOpenDecline: PropTypes.func.isRequired
-  // href: PropTypes.string.isRequired
 };
 
 export default Offer;
