@@ -26,10 +26,10 @@ class LoginContainer extends Component {
     LoginApi.loginUser(loginUser)
     .then(response => {
       if(response.status === 200 ) {
+        setAccessToken(response.data.access_token);
         this.setState({
           loginUser: true
         });
-        setAccessToken(response.data.access_token);
       }else {
         $('#login').openModal();
       }

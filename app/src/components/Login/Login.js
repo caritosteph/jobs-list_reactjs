@@ -30,7 +30,7 @@ const Login = ({handleSubmit}) => {
         </div>
         <div className = "row">
           <div className = "col s6 offset-s3 button__login">
-            <button className = "waves-effect waves-teal btn-flat">PASSWORT VERGESSEN</button>
+            <a type="button" className = "waves-effect waves-teal btn-flat">PASSWORT VERGESSEN</a>
           </div>
         </div>
         <div className = "row">
