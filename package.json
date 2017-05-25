@@ -12,7 +12,6 @@
     "lint": "esw webpack.config.* src app/tools --color",
     "lint:watch": "npm run lint -- --watch"
   },
-  "repository": "git+https://github.com/zenjob/frontend-challenge.git",
   "author": "Carolyn Ulfe",
   "license": "ISC",
   "dependencies": {
